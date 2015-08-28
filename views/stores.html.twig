@@ -21,10 +21,12 @@
 
             <hr noshade size=4 width=100% align=left>
 
-            <h1><small>Add a Store</small></h1>
+            <h1><small>Add a store</small></h1>
             <form action ='/stores' method='post'>
-                <label for 'name'>Name:</label>
-                <input id='name' name='name' type='text' placeholder='store name' required>
+                <div class="form-group">
+                    <label for 'name'>Name:</label>
+                    <input id='name' name='name' type='text' required>
+                </div>
                 <div class="form-group">
                     <label for 'address'>Address:</label>
                     <input id='address' class="form-control" name='address' type='text' required>

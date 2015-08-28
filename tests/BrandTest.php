@@ -156,10 +156,9 @@
 
             //Act
             $test_brand->addStore($test_store);
-            $result = $test_brand->getStores();
 
             //Assert
-            $this->assertEquals($result,[$test_store]);
+            $this->assertEquals($test_brand->getStores(),[$test_store]);
         }
 
         function testGetStores()
@@ -185,10 +184,33 @@
             //Act
             $test_brand->addStore($test_store);
             $test_brand->addStore($test_store2);
+
             $result = $test_brand->getStores();
 
             //Assert
             $this->assertEquals([$test_store, $test_store2], $result);
+        }
+
+        function testDelete()
+        {
+            //Arrange
+            $name = "Nike";
+            $id = 1;
+            $test_brand = new Brand($name, $id);
+            $test_brand->save();
+
+            $name = "Ben's";
+            $address = "111 SW 11th Ave";
+            $id = 1;
+            $test_store = new Store($name, $address, $id);
+            $test_store->save();
+
+            //Act
+            $test_brand->addStore($test_store);
+            $test_brand->delete();
+            
+            //Assert
+            $this->assertEquals([], $test_store->getBrands());
         }
     }
 ?>
