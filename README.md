@@ -1,6 +1,6 @@
 # Shoe Stores with MySQL
 
-##### The application allows users to search a list of local shoe stores and the brands of shoes they carry. Please see [library_database_design.png](library_database_design.png) for the database design.
+##### The application allows users to search a list of local shoe stores and the brands of shoes they carry. Please see [shoe_stores_database_design.png](shoe_stores_database_design.png) for the database design.
 (8/28/15)
 
 #### By Logan Wu
