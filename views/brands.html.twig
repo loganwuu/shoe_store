@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Brands</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>All Brands</h1>
+
+            {% if brands is not empty %}
+                <p>Here are all the brands:</p>
+                <ul>
+                    {% for brand in brands|sort %}
+                        <li><a href="/brand/{{ brand.getId }}">{{ brand.getName }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2><small>There is no brands yet. Add one now!</small></h2>
+            {% endif %}
+
+            <hr noshade size=4 width=100% align=left>
+
+            <h1><small>Add a Brand</small></h1>
+
+            <form action ='/brands' method='post'>
+                <label for 'name'>Name:</label>
+                <input id='name' name='name' type='text' required>
+                <button type='submit'>Add brand</button>
+            </form>
+
+            <form action ='/delete_brands' method='post'>
+                <button type='submit'class="btn-danger">Clear</button>
+            </form>
+
+            <form action="/">
+                <button type="submit" class="btn-default">Return Home</button>
+            </form>
+        </div>
+    </body>
+</html>

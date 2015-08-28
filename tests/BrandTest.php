@@ -73,7 +73,7 @@
             $test_brand->save();
 
             //Act
-            $result = Brands::getAll();
+            $result = Brand::getAll();
 
             //Assert
             $this->assertEquals($test_brand, $result[0]);
@@ -155,10 +155,11 @@
             $test_store->save();
 
             //Act
-            $test_store->addStore($test_store);
+            $test_brand->addStore($test_store);
+            $result = $test_brand->getStores();
 
             //Assert
-            $this->assertEquals($test_brand->getStores(),[$test_store]);
+            $this->assertEquals($result,[$test_store]);
         }
 
         function testGetStores()

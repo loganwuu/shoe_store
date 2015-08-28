@@ -56,21 +56,21 @@
 
         function getStores()
         {
-            $query = $GLOBALS['DB']->query("SELECT stores.* FROM brands
-                JOIN brands_stores ON (brands.id = brands_stores.brand_id)
-                JOIN stores ON ( brands_stores.store_id = stores.id)
-                WHERE brands.id = {$this->getId()};");
-            $stores = $query->fetchAll(PDO::FETCH_ASSOC);
-            $stores_array = array();
+            $query = $GLOBALS['DB']->query("SELECT stores.* FROM
+                brands JOIN brands_stores ON (brands.id = brands_stores.brand_id)
+                       JOIN stores ON ( brands_stores.store_id = stores.id)
+                       WHERE brands.id = {$this->getId()};");
+            $returned_stores = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach($stores as $store) {
+            $stores = array();
+            foreach($returned_stores as $store) {
                 $name = $store['name'];
                 $address = $store['address'];
                 $id = $store['id'];
                 $new_store = new Store($name, $address, $id);
-                array_push($stores_array, $new_store);
+                array_push($stores, $new_store);
             }
-            return $stores_array;
+            return $stores;
         }
 
         static function find($search_id)
