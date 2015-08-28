@@ -27,7 +27,7 @@
             $this->address = (string) $new_address;
         }
 
-        function getAddress
+        function getAddress()
         {
             return $this->address;
         }
