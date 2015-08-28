@@ -20,7 +20,7 @@
             Store::deleteAll();
         }
 
-        function test_getName()
+        function testGetName()
         {
             //Arrange
             $name = "Ben";
@@ -105,6 +105,28 @@
             $this->assertEquals([], $test_brand->getStores());
         }
 
+        function testGetAll()
+        {
+            //Arrange
+            $name = "Ben";
+            $address = "111 SW 11th Ave";
+            $id = 1;
+            $test_store = new Store($name, $address, $id);
+            $test_store->save();
+
+            $name2 = "Jen";
+            $address2 = "222 SW 12th Ave";
+            $id2 = 2;
+            $test_store2 = new Store($name2, $address2, $id2);
+            $test_store2->save();
+
+            //Act
+            $result = Store::getAll();
+
+            //Assert
+            $this->assertEquals([$test_store, $test_store2], $result);
+        }
+
         function testDeleteAll()
         {
             //Arrange
@@ -162,6 +184,7 @@
 
             //Act
             $result = Store::find($test_store2->getId());
+
             //Assert
             $this->assertEquals($test_store2, $result);
         }
@@ -214,6 +237,5 @@
             //Assert
             $this->assertEquals([$test_brand, $test_brand2], $result);
         }
-
     }
 ?>
