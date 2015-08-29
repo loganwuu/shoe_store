@@ -20,9 +20,10 @@ This application allows salon users to add shoe stores and brands and connect be
 
 * ```CREATE DATABASE shoes;```
 * ```USE shoes;```
-* ```CREATE TABLE stores (name VARCHAR(255), id serial PRIMARY KEY);```
+* ```CREATE TABLE stores (name VARCHAR(255), address TEST, id serial PRIMARY KEY);```
 * ```CREATE TABLE brands (name VARCHAR(255), id serial PRIMARY KEY);```
 * ```CREATE TABLE brands_stores (brand_id INT, store_id INT, id serial PRIMARY KEY);```
+* Alternatively, you can just simply download the ```shoes.sql.zip``` file and import the database directly to phpMyAdmin using server at ```localhost:8080```.
 
 ## Technologies Used
 
