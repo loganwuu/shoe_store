@@ -158,7 +158,7 @@
             $test_brand->addStore($test_store);
 
             //Assert
-            $this->assertEquals($test_brand->getStores(),[$test_store]);
+            $this->assertEquals($test_brand->getStores(), [$test_store]);
         }
 
         function testGetStores()
@@ -186,7 +186,7 @@
             $test_brand->addStore($test_store2);
 
             $result = $test_brand->getStores();
-
+            
             //Assert
             $this->assertEquals([$test_store, $test_store2], $result);
         }
@@ -208,7 +208,7 @@
             //Act
             $test_brand->addStore($test_store);
             $test_brand->delete();
-            
+
             //Assert
             $this->assertEquals([], $test_store->getBrands());
         }
