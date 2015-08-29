@@ -43,7 +43,7 @@
     });
 
     //delete one brand, show updated list of brands
-    $app->delete("/brands/{id}", function($id) use ($app) {
+    $app->delete("/brand/{id}", function($id) use ($app) {
         $brand = Brand::find($id);
         $brand->delete();
         return $app['twig']->render('brands.html.twig', array('brands' => Brand::getAll()));

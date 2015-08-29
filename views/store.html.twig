@@ -32,7 +32,7 @@
 
             <p><a href="/stores/{{ store.getId }}/edit">Edit the store name</a></p>
 
-            <form action="/stores/{{ store.getId }}" method="post">
+            <form action="/store/{{ store.getId }}" method="post">
                 <input name="_method" type="hidden" value="delete">
                 <button type="submit" class="btn-danger">Delete</button>
             </form>
