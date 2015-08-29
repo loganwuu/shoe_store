@@ -14,14 +14,17 @@
                         <li>{{ brand.getName }}</li>
                     </ul>
                 {% endfor %}
+            {% else %}
+                <p>No brands are available at this store as of now.</p>
             {% endif %}
 
-            <form action="/add_brands" method="post">
+            <form action="/store/{{ store.getId }}" method="post">
                 <input type="hidden" name="brand_id" value="{{ store.getId }}">
+
                 <label for="brand_id">Add a brand:</label>
                 <select id='brand_id' name='brand_id' type='text'>
                     {% for brand in all_brands %}
-                      <option value="{{ store.getId }}"> {{ brand.getName }} </option>
+                      <option value="{{ brand.getId }}"> {{ brand.getName }} </option>
                     {% endfor %}
                 </select>
                 <button type="submit">Select</button>
