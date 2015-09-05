@@ -148,7 +148,7 @@
             $test_brand = new Brand($name, $id);
             $test_brand->save();
 
-            $name = "Ben's";
+            $name = "Bens";
             $address = "111 SW 11th Ave";
             $id = 1;
             $test_store = new Store($name, $address, $id);
@@ -169,13 +169,13 @@
             $test_brand = new Brand($name, $id);
             $test_brand->save();
 
-            $name = "Ben's";
+            $name = "Bens";
             $address = "111 SW 11th Ave";
             $id = 1;
             $test_store = new Store($name, $address, $id);
             $test_store->save();
 
-            $name2 = "Jen's";
+            $name2 = "Jens";
             $address2 = "222 SW 12th Ave";
             $id2 = 2;
             $test_store2 = new Store($name2, $address2, $id2);
