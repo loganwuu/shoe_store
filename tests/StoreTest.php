@@ -197,7 +197,7 @@
             $test_brand = new Brand($name, $id);
             $test_brand->save();
 
-            $name = "Ben's";
+            $name = "Bens";
             $address = "111 SW 11th Ave";
             $id = 1;
             $test_store = new Store($name, $address, $id);
@@ -214,7 +214,7 @@
         function testGetBrands()
         {
             //Arrange
-            $name = "Ben's";
+            $name = "Bens";
             $address = "111 SW 11th Ave";
             $id = 1;
             $test_store = new Store($name, $address, $id);
